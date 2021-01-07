@@ -1,3 +1,7 @@
+/*
+* TODO: get slider data, update pixel functions
+*/
+
 const container = document.getElementById("sketch-container");
 
 function makeRows(rows, cols) {
@@ -9,5 +13,49 @@ function makeRows(rows, cols) {
     container.appendChild(cell).className = "grid-item";
   };
 };
-
+//initial rows and columns;
 makeRows(16, 16);
+
+//stores all buttons
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => button.addEventListener('click', doButtonStuff));
+
+function doButtonStuff(e) {
+  //TODO: remove this
+  console.log(e.target.id);
+
+  let btnSelection = e.target.id;
+  switch (btnSelection) {
+    case 'black':
+      console.log("black chosen...");
+      setBlackPixels();
+      break;
+    case 'xmas':
+      setXmasPixels();
+      break;
+    case 'rainbow':
+      setRainbowPixels();
+      break;
+    case 'reset':
+      resetPixels();
+      break;
+  }
+
+}
+
+function setBlackPixels() {
+  console.log("Setting pixels to black...");
+}
+
+function setXmasPixels() {
+  console.log("Setting pixels to red & green...")
+}
+
+function setRainbowPixels() {
+  console.log("Setting pixels to rainbow...");
+}
+
+function resetPixels() {
+  console.log("Resetting...");
+}
