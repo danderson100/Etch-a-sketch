@@ -1,4 +1,4 @@
-const container = document.getElementById("container");
+const container = document.getElementById("sketch-container");
 
 function makeRows(rows, cols) {
   container.style.setProperty('--grid-rows', rows);
