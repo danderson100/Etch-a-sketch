@@ -61,13 +61,9 @@ h1 {
     background-color: whitesmoke;
 
   }
-  
+  /* TODO: remove this */
   .grid-item {
     border: 1px solid #ddd;
-  }
-
-  .grid-item:hover {
-      background-color: black;
   }
 
   section {
@@ -140,7 +136,9 @@ h1 {
   /*Slider stuff */
   .slide-container {
     flex-direction: column;
+    margin-bottom: 15px;
     width: 100%; /* Width of the outside container */
+    
   }
   
   /* The slider itself */

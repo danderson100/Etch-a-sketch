@@ -5,6 +5,7 @@
 const container = document.getElementById("sketch-container");
 
 function makeRows(rows, cols) {
+
   container.style.setProperty('--grid-rows', rows);
   container.style.setProperty('--grid-cols', cols);
   for (c = 0; c < (rows * cols); c++) {
@@ -15,6 +16,20 @@ function makeRows(rows, cols) {
 };
 //initial rows and columns;
 makeRows(16, 16);
+
+let slider = document.querySelector('.slider');
+slider.addEventListener('input', changePixels);
+
+
+function changePixels() {
+  let pixels = slider.value;
+
+  let gridPixels = container.querySelectorAll('div');
+  gridPixels.forEach(gridPixel => gridPixel.remove());
+
+  makeRows(pixels, pixels);
+  console.log(pixels);
+}
 
 //stores all buttons
 const buttons = document.querySelectorAll('button');
