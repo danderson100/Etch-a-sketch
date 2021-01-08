@@ -88,8 +88,17 @@ h1 {
     align-items: flex-start;
   }
 
+ /* classes to adjust pixel colors */
   .black {
       background-color: black;
+  }
+
+  .xmas-red {
+    background-color: red;
+  }
+
+  .xmas-green {
+    background-color: green;
   }
 
   .white-border {
