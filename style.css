@@ -27,10 +27,6 @@ h1 {
   font-style: bold;
 }
 
-/* div {
-  background-color:#7E57C2;
-} */
-
 :root {
     --grid-cols: 1;
     --grid-rows: 1;
@@ -60,10 +56,6 @@ h1 {
     border-radius: 3%;
     background-color: whitesmoke;
 
-  }
-  /* TODO: remove this */
-  .grid-item {
-    border: 1px solid #ddd;
   }
 
   section {

@@ -19,10 +19,11 @@ function makeRows(rows, cols, color) {
   container.style.setProperty('--grid-cols', cols);
   for (c = 0; c < (rows * cols); c++) {
     let cell = document.createElement("div");
-    container.appendChild(cell).className = "grid-item";
+    container.appendChild(cell);
   };
 
   let gridPixels = container.querySelectorAll('div');
+
 
   switch (color) {
     case 'black':
@@ -57,26 +58,30 @@ function changePixels() {
 function doButtonStuff(e) {
 
   let btnSelection = e.target.id;
-
   let gridPixels = container.querySelectorAll('div');
+
+  gridPixels.forEach(cell => cell.remove());
 
   switch (btnSelection) {
     case 'black':
       currColor = 'black';
-      setBlackPixels(gridPixels);
+      makeRows(slider.value, slider.value, currColor);
       break;
     case 'xmas':
       currColor = 'xmas';
-      setXmasPixels(gridPixels);
+      makeRows(slider.value, slider.value, currColor);
       break;
     case 'rainbow':
       currColor = 'rainbow';
-      setRainbowPixels(gridPixels);
+      makeRows(slider.value, slider.value, currColor);
       break;
     case 'reset':
       resetPixels(gridPixels);
       break;
   }
+
+  
+
 
 }
 
@@ -87,10 +92,7 @@ function setBlackPixels(gridPixels) {
 
 function setXmasPixels(gridPixels) {
 
-  gridPixels.forEach(cell => cell.addEventListener('mouseenter', () => cell.classList.remove()));
-
   gridPixels.forEach(redOrGreen);
-  
 }
 
 function redOrGreen(cell) {
@@ -105,9 +107,7 @@ function redOrGreen(cell) {
 
 function setRainbowPixels(gridPixels) {
 
-  gridPixels.forEach(cell => cell.addEventListener('mouseenter', () => cell.classList.remove()));
   gridPixels.forEach(rainbow);
- 
 }
 
 function rainbow(cell) {
