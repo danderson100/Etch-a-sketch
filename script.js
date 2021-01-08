@@ -55,8 +55,6 @@ function changePixels() {
 }
 
 function doButtonStuff(e) {
-  //TODO: remove this
-  console.log(e.target.id);
 
   let btnSelection = e.target.id;
 
@@ -83,12 +81,11 @@ function doButtonStuff(e) {
 }
 
 function setBlackPixels(gridPixels) {
-  console.log("Setting pixels to black...");
+
   gridPixels.forEach(cell => cell.addEventListener('mouseenter', () => cell.classList.add('black')));
 }
 
 function setXmasPixels(gridPixels) {
-  console.log("Setting pixels to red & green...")
 
   gridPixels.forEach(cell => cell.addEventListener('mouseenter', () => cell.classList.remove()));
 
@@ -107,11 +104,38 @@ function redOrGreen(cell) {
 }
 
 function setRainbowPixels(gridPixels) {
-  console.log("Setting pixels to rainbow...");
+
+  gridPixels.forEach(cell => cell.addEventListener('mouseenter', () => cell.classList.remove()));
+  gridPixels.forEach(rainbow);
+ 
+}
+
+function rainbow(cell) {
+  num = Math.floor((Math.random()) * 6);
+
+  switch (num) {
+    case 0:
+      cell.addEventListener('mouseenter', () => cell.classList.add('xmas-green'));
+      break;
+    case 1:
+      cell.addEventListener('mouseenter', () => cell.classList.add('xmas-red'));
+      break;
+    case 2:
+      cell.addEventListener('mouseenter', () => cell.classList.add('purple'));
+      break;
+    case 3:
+      cell.addEventListener('mouseenter', () => cell.classList.add('blue'));
+      break;
+    case 4:
+      cell.addEventListener('mouseenter', () => cell.classList.add('violet'));
+      break;
+    case 5:
+      cell.addEventListener('mouseenter', () => cell.classList.add('yellow'));
+      break;
+  }
 }
 
 function resetPixels(gridPixels) {
-  console.log("Resetting...");
   gridPixels.forEach(cell => cell.remove());
   makeRows(16, 16, 'black');
 }

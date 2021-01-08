@@ -101,6 +101,22 @@ h1 {
     background-color: green;
   }
 
+  .purple {
+    background-color: purple;
+  }
+
+  .yellow {
+    background-color: yellow;
+  }
+
+  .blue {
+    background-color: blue;
+  }
+
+  .violet {
+    background-color: violet;
+  }
+
   .white-border {
     border-style: solid;
     border-width: 10px;
