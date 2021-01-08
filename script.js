@@ -137,5 +137,6 @@ function rainbow(cell) {
 
 function resetPixels(gridPixels) {
   gridPixels.forEach(cell => cell.remove());
+  currColor = 'black';
   makeRows(16, 16, 'black');
 }
